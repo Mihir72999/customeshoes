@@ -402,10 +402,10 @@ function getRectClient(e) {
     const y = e.clientY - clientRect.top;
     return { x, y };
 }
- canvas.onmousedown=(e)=>{
-   const { x, y } = getRectClient(e);
-       console.log(x,y)
-   }
+//  canvas.onmousedown=(e)=>{
+//    const { x, y } = getRectClient(e);
+//        console.log(x,y)
+//    }
 
   canvas.onmousemove = (e) => {
     const { x, y } = getRectClient(e);
