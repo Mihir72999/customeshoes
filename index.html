@@ -354,7 +354,7 @@ robertoHeel.onclick = () =>{
     }else if(image.src.includes('images/shoes11.png')){
         image.src='images/shoes1001.png'
     }else if(image.src.includes('images/shoes1101.png')){
-        image.src='images/shoes102.png'
+        image.src='images/shoes1001.png'
        
     }else if(image.src.includes('images/shoes102.png')){
        image.src ='images/shoes1202.png'
@@ -402,10 +402,10 @@ function getRectClient(e) {
     const y = e.clientY - clientRect.top;
     return { x, y };
 }
-// canvas.onmousedown=(e)=>{
-//   const { x, y } = getRectClient(e);
-//       console.log(x,y)
-//   }
+ canvas.onmousedown=(e)=>{
+   const { x, y } = getRectClient(e);
+       console.log(x,y)
+   }
 
   canvas.onmousemove = (e) => {
     const { x, y } = getRectClient(e);
