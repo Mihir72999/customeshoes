@@ -308,7 +308,7 @@ robertoQuarter.onclick = () =>{
     }else if(image.src.includes('images/shoes1001.png')){
         image.src='images/shoes1001.png'
     }else if(image.src.includes('images/shoes1101.png')){
-        image.src='images/shoes1101.png'
+        return
     }else if(image.src.includes('images/shoes102.png')){
         image.src='images/shoes1101.png'
 
@@ -324,15 +324,18 @@ robertoQuarter.onclick = () =>{
 }
 
 fabioQuarter.onclick = () =>{
-    if(image.src.includes('images/shoes101.png')){
+    if(image.src.includes('images/shoes101.png')){      //ok
       image.src='images/shoes1202.png'
-    }else if(image.src.includes('images/shoes1002.png')){
+    }else if(image.src.includes('images/shoes1002.png')){   //ok
         image.src = 'images/shoes102.png'
     }else if(image.src.includes('images/shoes1001.png')){
         image.src='images/shoes1202.png'
     }else if(image.src.includes('images/shoes1101.png')){
         image.src = 'images/shoes102.png'
-    }else{
+    }else if(image.src.includes('images/shoes102.png')){
+        return
+    }
+    else{
         image.src = 'images/shoes12.png'
     }
 
@@ -352,7 +355,13 @@ robertoHeel.onclick = () =>{
        
     }else if(image.src.includes('images/shoes102.png')){
        image.src ='images/shoes1202.png'
-    }
+    }else if(image.src.includes('images/shoes1001.png')){
+        return
+    }else if(image.src.includes('images/shoes1.png')){
+        return
+     }else if(image.src.includes('images/shoes1202.png')){
+        return
+     }
 
     else{
         image.src='images/shoes101.png'
@@ -370,7 +379,7 @@ fabioHeel.onclick = () =>{
     }else if(image.src.includes('images/shoes1001.png')){
         image.src='images/shoes1101.png'
     }else if(image.src.includes('images/shoes102.png')){
-        image.src='images/shoes1001.png'
+        return
     }else if(image.src.includes('images/shoes1202.png')){
        image.src ='images/shoes102.png'
     }
@@ -390,10 +399,10 @@ function getRectClient(e) {
     const y = e.clientY - clientRect.top;
     return { x, y };
 }
-canvas.onmousedown=(e)=>{
-  const { x, y } = getRectClient(e);
- 
-  }
+// canvas.onmousedown=(e)=>{
+//   const { x, y } = getRectClient(e);
+//       console.log(x,y)
+//   }
 
   canvas.onmousemove = (e) => {
     const { x, y } = getRectClient(e);
@@ -473,6 +482,49 @@ function isMouseInside(x, y , polygontype='quarter') {
     return isPointInPolygon(x, y, polygontype === 'quarter' ? quaterPolygone : polygon);
 }
 
+function heelCapOpacity(opacitys){
+        //   ctx.globalAlpha = opacitys
+          ctx.beginPath();
+          ctx.moveTo(205, 251);
+          ctx.lineTo(169, 233);
+          ctx.lineTo(145, 179);
+          ctx.lineTo(166, 91);
+          ctx.lineTo(169, 97);
+          ctx.quadraticCurveTo(169, 79, 194, 91);
+          ctx.lineTo(195, 87);
+          ctx.quadraticCurveTo(168, 77, 166, 93);
+          ctx.lineTo(162, 131);
+        ctx.bezierCurveTo(174, 130, 200, 195, 200, 250);
+        ctx.closePath();
+
+        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55 - opacitys)} )`; // Transparent effect
+        ctx.fill();
+        
+        ctx.globalAlpha = 1.0; // Reset opacity
+       
+    }
+
+
+function quarterOpacity(opacitys){
+        
+        // ctx.globalAlpha = opacitys
+        ctx.beginPath()
+        ctx.moveTo(167 , 99.45)
+        ctx.lineTo(165 , 129.45)
+        ctx.bezierCurveTo(175, 131, 201, 196, 204, 251);
+        ctx.lineTo(212 , 254.45)
+        ctx.bezierCurveTo(230, 175, 215.45, 180, 354, 212);
+        ctx.quadraticCurveTo(354, 190, 303, 117);
+        ctx.quadraticCurveTo(250, 180, 169, 97.45);
+        ctx.closePath();
+        // ctx.stroke()
+        // ctx.strokeStyle = 'red'
+        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55  - opacitys)} )`;
+        ctx.fill()
+        ctx.globalAlpha = 1.0; // Reset opacity
+    }
+      
+     
 
 // Point-in-Polygon function (Ray-Casting Algorithm)
 function isPointInPolygon(x, y, polygon) {
@@ -547,44 +599,7 @@ function drawImage() {
                      heelCapOpacity(opacityHeel)
                   }
       
-    function quarterOpacity(opacitys){
-        
-        // ctx.globalAlpha = opacitys
-        ctx.beginPath()
-        ctx.moveTo(167 , 99.45)
-        ctx.lineTo(165 , 129.45)
-        ctx.bezierCurveTo(175, 131, 201, 196, 204, 251);
-        ctx.lineTo(212 , 254.45)
-        ctx.bezierCurveTo(230, 175, 215.45, 180, 354, 212);
-        ctx.quadraticCurveTo(354, 190, 303, 117);
-        ctx.quadraticCurveTo(250, 180, 169, 97.45);
-        ctx.closePath();
-        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55  - opacitys)} )`;
-        ctx.fill()
-        ctx.globalAlpha = 1.0; // Reset opacity
-    }
-      
-      function heelCapOpacity(opacitys){
-        //   ctx.globalAlpha = opacitys
-          ctx.beginPath();
-          ctx.moveTo(205, 251);
-          ctx.lineTo(169, 233);
-          ctx.lineTo(145, 179);
-          ctx.lineTo(166, 91);
-          ctx.lineTo(169, 97);
-          ctx.quadraticCurveTo(169, 79, 194, 91);
-          ctx.lineTo(195, 87);
-          ctx.quadraticCurveTo(168, 77, 166, 93);
-          ctx.lineTo(162, 131);
-        ctx.bezierCurveTo(174, 130, 200, 195, 200, 250);
-        ctx.closePath();
-
-        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55 - opacitys)} )`; // Transparent effect
-        ctx.fill();
-        
-        ctx.globalAlpha = 1.0; // Reset opacity
-       
-    }
+    
 }
     
   </script>
