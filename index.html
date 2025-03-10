@@ -324,6 +324,7 @@ robertoQuarter.onclick = () =>{
 }
 
 fabioQuarter.onclick = () =>{
+    console.log(image.src)
     if(image.src.includes('images/shoes101.png')){      //ok
       image.src='images/shoes1202.png'
     }else if(image.src.includes('images/shoes1002.png')){   //ok
@@ -334,7 +335,9 @@ fabioQuarter.onclick = () =>{
         image.src = 'images/shoes102.png'
     }else if(image.src.includes('images/shoes102.png')){
         return
-    }
+    }else if(image.src.includes('images/shoes1202.png')){
+       return
+    } 
     else{
         image.src = 'images/shoes12.png'
     }
