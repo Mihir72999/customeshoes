@@ -402,10 +402,10 @@ function getRectClient(e) {
     const y = e.clientY - clientRect.top;
     return { x, y };
 }
-// canvas.onmousedown=(e)=>{
-//   const { x, y } = getRectClient(e);
-//       console.log(x,y)
-//   }
+canvas.onmousedown=(e)=>{
+  const { x, y } = getRectClient(e);
+      console.log(x,y)
+  }
 
   canvas.onmousemove = (e) => {
     const { x, y } = getRectClient(e);
@@ -475,10 +475,12 @@ function isMouseInside(x, y , polygontype='quarter') {
         {x:165 ,y:129.45},
         {x:204 ,y:251},
         {x:212 ,y:254.45},
+        {x:230 ,y:180},
         {x:354 ,y:212},
         {x:303 ,y:117},
+        {x:250 , y:150},
         {x:169 ,y:97.45},
-
+        
       ]
     
     
