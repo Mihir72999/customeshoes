@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" sizes="32x32" href="https://d2w9m16hs9jc37.cloudfront.net/images/favicon/favicon-32x32.png" />
+    <title>Design your own Dress Shoes online | 100% Handcrafted - Hockerty</title>
+    <meta name="description" content="custome website you create your custome shoes collection">
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+       
+        /* flex-direction: column; */
+        /* align-items: center; */
+        /* justify-content: center; */
+        background-color:rgb(231, 229, 229);
+        }
+    #canvas{
+        background-color:rgb(231, 229, 229);
+
+    }
+    .main{
+        position: relative;
+        
+    }
+    #heelcap {
+        position: absolute;
+        /* display: none; */
+        width: 270px;
+        height: 97dvh;
+        transform: translateX(250px);
+        right: 0;
+        top: 0;
+        background-color: white;
+     
+    }
+    #quarter {
+        /* display: none; */
+        position: absolute;
+        width: 270px;
+        height: 97dvh;
+        transform: translateX(250px);
+        right: 0;
+        top: 0;
+        background-color: white;
+    }
+    #mainaside {
+        position: absolute;
+        width: 270px;
+        height: 97dvh; 
+        right: 0;
+        top: 0;
+        background-color: white;
+    }
+    .mainheader{
+     display: flex;
+     width: 100%;
+     height: 100px;
+     text-align: center;
+    }
+    .mainheader > p {
+        justify-content: center;
+        margin: auto;
+    }
+    
+    .header{
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: auto;
+    }
+    .header > p {
+        margin-top: 0;
+        font-size: small;
+
+    }
+    .icon {
+        display: flex;
+        justify-content: center;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        background-color: grey;
+    }
+    .icon > p {
+        display: inline;
+        margin: auto;
+        font-style: italic;
+        color: white;
+        font-weight: bold;
+    }
+    .middle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 75px;
+        width: 100%;
+    }
+    .middle > p {
+        margin-block: 0;
+        
+      
+      }
+      .middle > h4{
+        margin-block: .25rem;
+       }
+    .iconarea{
+        display: flex;
+        flex-direction: column;
+        height: 425px;
+        width: 100%;
+        margin:0 auto;
+
+    }
+    .iconarea > span  {
+
+        display: flex;
+        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }      
+    .iconarea > span > img {
+        height: 40px;
+        width: 40px;
+        opacity: 0.5;
+        
+    } 
+    .iconarea > span > p {
+        margin-block: 10px;
+        font-size: small;
+    }
+    .material {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       align-items: center;
+        
+    }
+    .material > span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 30px;
+    }
+    .material > span > img {
+       width: 70px;
+       height: 70px;
+       border-radius: 50%; 
+    }
+    .material > span > p {
+        margin-block: 5px;
+    }
+    .material > span > img:hover{
+        cursor: pointer;
+    }
+ 
+   </style>
+</head>
+<body>
+    <div class="main">
+
+        <canvas id="canvas"></canvas>
+        <!-- <div style="position: relative;"> -->
+            <aside id="mainaside">
+               <div class="mainheader">
+               <p>Create your own shoes in <br/> just a few click</p>
+               </div>
+               <div class="iconarea">
+                <span>
+                    <img src="https://d1fufvy4xao6k9.cloudfront.net/images/man/shoe/icon_style.svg" alt="icon_style" />
+                   <p>STYLE</p>
+                </span>
+                <span>
+                    <img src="https://d1fufvy4xao6k9.cloudfront.net/images/man/shoe/icon_material.svg" alt="icon_style" />
+                   <p>MATERIAL</p>
+                </span>
+                <span>
+                    <img src="https://d1fufvy4xao6k9.cloudfront.net/images/man/shoe/icon_size.svg" alt="icon_style" />
+                  <p>SIZES & OPTIONS</p>
+                </span>
+               
+               </div> 
+            </aside>
+            <aside id="heelcap">
+                <div class="header">
+                    <p>HEELCAP</P>
+                        <div class="icon">
+                            <p>i</p>
+                        </div>
+                 </div>
+      <div class="middle"> 
+          <h4>ITALIAN CALF LEATHER</h4>
+          <p>Softness and Comfor</p>
+        </div>
+        <div class="material">
+         <span>
+            <img id="1" src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3481_320.jpg" alt=""/>
+            <p>Roberto</p>
+         </span>
+        <span>
+            <img id="2" src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3476_320.jpg" alt=""/>
+            <p>Fabio</p>
+        </span>
+        <span>
+            <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3477_320.jpg" alt="" />
+            <p>Glovanni</p>
+        </span>
+        <span>
+            <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3478_320.jpg" alt=""/>
+            <p>Carlo</p>
+        </span>
+        <span>
+            <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3480_320.jpg" alt="" />
+            <p>Paolo</p>
+        </span>
+        <span>
+            <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3479_320.jpg" alt="" />
+            <p>Andrea</p>
+        </span>
+        </div>
+        
+    </aside>
+    <aside id="quarter">
+        <div class="header">
+            <p>QUARTER</P>
+                <div class="icon">
+                    <p>i</p>
+                </div>
+            </div>
+<div class="middle"> 
+  <h4>ITALIAN CALF LEATHER</h4>
+  <p>Softness and Comfor</p>
+</div>
+<div class="material">
+    <span>
+       <img id="11" src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3481_320.jpg" alt=""/>
+       <p>Roberto</p>
+    </span>
+   <span>
+       <img id="12" src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3476_320.jpg" alt=""/>
+       <p>Fabio</p>
+   </span>
+   <span>
+       <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3477_320.jpg" alt="" />
+       <p>Glovanni</p>
+   </span>
+   <span>
+       <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3478_320.jpg" alt=""/>
+       <p>Carlo</p>
+   </span>
+   <span>
+       <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3480_320.jpg" alt="" />
+       <p>Paolo</p>
+   </span>
+   <span>
+       <img src="https://d1fufvy4xao6k9.cloudfront.net/dimg/fabric/shoe/3479_320.jpg" alt="" />
+       <p>Andrea</p>
+   </span>
+   </div>
+</aside>
+</div>
+    
+ 
+  <script>
+let isHoverQuarter = false;
+let isHoverHeel = false;
+let opacityQuarter = 1.0;
+let opacityHeel = 1.0;
+
+const canvas = document.querySelector('#canvas');
+canvas.height = 400;
+canvas.width = 800;
+const ctx = canvas.getContext('2d');
+const image = new Image();
+let isHover = false;
+
+image.onload = () => {
+     drawImage(); // Initial draw
+};
+
+image.src = 'images/shoesnew.png';
+
+const robertoQuarter = document.getElementById('11')
+const fabioQuarter = document.getElementById('12')
+const robertoHeel = document.getElementById('1')
+const fabioHeel = document.getElementById('2')
+
+robertoQuarter.onclick = () =>{ 
+    
+    if(image.src.includes('images/shoes101.png')){
+      image.src='images/shoes1001.png'
+    }
+     else if(image.src.includes('images/shoes1002.png')){
+
+        image.src='images/shoes1101.png' 
+     }
+     
+    else if(image.src.includes('images/shoes1202.png')){
+        image.src='images/shoes1001.png'
+    }else if(image.src.includes('images/shoes1001.png')){
+        image.src='images/shoes1001.png'
+    }else if(image.src.includes('images/shoes1101.png')){
+        image.src='images/shoes1101.png'
+    }else if(image.src.includes('images/shoes102.png')){
+        image.src='images/shoes1101.png'
+
+    }
+    else{
+        image.src = 'images/shoes11.png'
+    }
+
+    fabioQuarter.style.outlineOffset='0px'
+    fabioQuarter.style.outline = 'none'
+    robertoQuarter.style.outline = '1px solid black'
+    robertoQuarter.style.outlineOffset = '5px'                       
+}
+
+fabioQuarter.onclick = () =>{
+    if(image.src.includes('images/shoes101.png')){
+      image.src='images/shoes1202.png'
+    }else if(image.src.includes('images/shoes1002.png')){
+        image.src = 'images/shoes102.png'
+    }else if(image.src.includes('images/shoes1001.png')){
+        image.src='images/shoes1202.png'
+    }else if(image.src.includes('images/shoes1101.png')){
+        image.src = 'images/shoes102.png'
+    }else{
+        image.src = 'images/shoes12.png'
+    }
+
+    robertoQuarter.style.outlineOffset='0px'
+    robertoQuarter.style.outline = 'none'
+    fabioQuarter.style.outline = '1px solid black'
+    fabioQuarter.style.outlineOffset = '5px'
+}
+
+robertoHeel.onclick = () =>{
+    if(image.src.includes('images/shoes12.png')){
+          image.src='images/shoes1202.png'
+    }else if(image.src.includes('images/shoes11.png')){
+        image.src='images/shoes1001.png'
+    }else if(image.src.includes('images/shoes1101.png')){
+        image.src='images/shoes102.png'
+       
+    }else if(image.src.includes('images/shoes102.png')){
+       image.src ='images/shoes1202.png'
+    }
+
+    else{
+        image.src='images/shoes101.png'
+    }
+    fabioHeel.style.outline='none'
+    fabioHeel.style.outlineOffset='0px'
+    robertoHeel.style.outline='1px solid black'
+    robertoHeel.style.outlineOffset='5px'
+}
+fabioHeel.onclick = () =>{
+    if(image.src.includes('images/shoes12.png')){
+       image.src ='images/shoes102.png'
+    }else if(image.src.includes('images/shoes11.png')){
+        image.src='images/shoes1202.png'
+    }else if(image.src.includes('images/shoes1001.png')){
+        image.src='images/shoes1101.png'
+    }else if(image.src.includes('images/shoes102.png')){
+        image.src='images/shoes1001.png'
+    }else if(image.src.includes('images/shoes1202.png')){
+       image.src ='images/shoes102.png'
+    }
+    else{
+        image.src = 'images/shoes1002.png'
+    }
+    robertoHeel.style.outline='none'
+    robertoHeel.style.outlineOffset='0px'
+    fabioHeel.style.outline='1px solid black'
+    fabioHeel.style.outlineOffset='5px'
+}
+
+
+function getRectClient(e) {
+    const clientRect = canvas.getBoundingClientRect();
+    const x = e.clientX - clientRect.left;
+    const y = e.clientY - clientRect.top;
+    return { x, y };
+}
+canvas.onmousedown=(e)=>{
+  const { x, y } = getRectClient(e);
+ 
+  }
+
+  canvas.onmousemove = (e) => {
+    const { x, y } = getRectClient(e);
+    const insideHeel = isMouseInside(x, y, "polygon");
+    const insideQuarter = isMouseInside(x, y, "quarter");  
+    if (insideQuarter !== isHoverQuarter || insideHeel !== isHoverHeel) {
+        isHoverQuarter = insideQuarter;
+        isHoverHeel = insideHeel;
+        // Change click behavior based on which polygon is hovered
+        if (insideHeel) {
+            canvas.onclick = () => heelcapDisplay();
+        } else if (insideQuarter) {
+            canvas.onclick = () => quarterDisplay();
+        } else {
+            canvas.onclick = () => console.log('none')
+        }
+      isHover = insideQuarter || insideHeel;
+      animateOpacity(insideQuarter ? 0.3 : 1.0, insideHeel ? 0.3 : 1.0); // Smoothly reduce opacity
+      
+    canvas.style.cursor = isHover ? 'pointer' : 'default';
+    
+    
+}
+isHover = false
+};
+const quarter = document.getElementById('quarter')
+const heelcap = document.getElementById('heelcap')
+function quarterDisplay(){
+    heelcap.style.transform = 'translateX(270px)'
+    quarter.style.transform = 'translateX(0px)'
+    quarter.style.transition='all';
+    quarter.style.transitionDuration = '0.5s'
+    quarter.style.transitionDelay='0.5s'
+}
+
+function heelcapDisplay(){
+    quarter.style.transform = 'translateX(270px)'
+
+    heelcap.style.transform = 'translateX(0px)'
+    heelcap.style.transition='all';
+    heelcap.style.transitionDuration = '0.5s'
+    heelcap.style.transitionDelay='0.5s'
+
+}
+
+canvas.onmouseleave = (e) => {
+    animateOpacity(1.0 , 1.0); // Restore full opacity
+    isHover = false;
+};
+
+function isMouseInside(x, y , polygontype='quarter') {
+    // Define the shoe cap shape as a polygon
+    const polygon = [
+        { x: 205, y: 251 },
+        { x: 169, y: 233 },
+        { x: 145, y: 179 },
+        { x: 166, y: 91 },
+        { x: 169, y: 97 },
+        { x: 194, y: 91 },
+        { x: 195, y: 87 },
+        { x: 166, y: 93 },
+        { x: 162, y: 131 },
+        { x: 200, y: 250 }
+    ];
+    const quaterPolygone = [
+        {x:167 ,y:99.45},
+        {x:165 ,y:129.45},
+        {x:204 ,y:251},
+        {x:212 ,y:254.45},
+        {x:354 ,y:212},
+        {x:303 ,y:117},
+        {x:169 ,y:97.45},
+
+      ]
+    
+    
+    return isPointInPolygon(x, y, polygontype === 'quarter' ? quaterPolygone : polygon);
+}
+
+
+// Point-in-Polygon function (Ray-Casting Algorithm)
+function isPointInPolygon(x, y, polygon) {
+    let inside = false;
+    let j = polygon.length - 1;
+
+    for (let i = 0; i < polygon.length; i++) {
+        let xi = polygon[i].x, yi = polygon[i].y;
+        let xj = polygon[j].x, yj = polygon[j].y;
+
+        let intersect = ((yi > y) !== (yj > y)) &&
+                        (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+        if (intersect) inside = !inside;
+        j = i;
+    }
+    
+    return inside;
+}
+
+// Smooth opacity transition
+function animateOpacity(targetOpacityQuarter, targetOpacityHeel) {
+    const speed = 0.05; // Transition speed
+    function step() {
+
+        // Animate quarter opacity
+        if (Math.abs(opacityQuarter - targetOpacityQuarter) >= speed) {
+            opacityQuarter += opacityQuarter < targetOpacityQuarter ? speed : -speed;
+             requestAnimationFrame(step);
+             
+            } else {
+                opacityQuarter = targetOpacityQuarter;
+                drawImage();
+        }
+
+        // Animate heel opacity
+        if (Math.abs(opacityHeel - targetOpacityHeel) >= speed) {
+            opacityHeel += opacityHeel < targetOpacityHeel ? speed : -speed;
+            requestAnimationFrame(step);
+            
+        } else {
+            opacityHeel = targetOpacityHeel;
+            drawImage();
+            // changed = true;
+        }
+        
+
+        // Only continue animating if there were changes
+        
+        drawImage();
+    }
+    requestAnimationFrame(step);
+    if (opacityQuarter !== targetOpacityQuarter || opacityHeel !== targetOpacityHeel) {
+    }
+
+    
+        
+}
+
+
+// Draw the image and fade the shoe cap portion only
+function drawImage() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+
+    // Draw full shoe image
+    ctx.drawImage(image, -canvas.width * 0.162 , -canvas.height * 0.160, 
+                  (canvas.width * 1.15) / 0.85, (canvas.height * 1.15) / 0.85);
+                  if (opacityQuarter < 1 || opacityHeel < 1) {
+                      // Apply transparency only on shoe cap portion
+                      ctx.globalAlpha = 1
+                      quarterOpacity(opacityQuarter)
+                      
+                     heelCapOpacity(opacityHeel)
+                  }
+      
+    function quarterOpacity(opacitys){
+        
+        // ctx.globalAlpha = opacitys
+        ctx.beginPath()
+        ctx.moveTo(167 , 99.45)
+        ctx.lineTo(165 , 129.45)
+        ctx.bezierCurveTo(175, 131, 201, 196, 204, 251);
+        ctx.lineTo(212 , 254.45)
+        ctx.bezierCurveTo(230, 175, 215.45, 180, 354, 212);
+        ctx.quadraticCurveTo(354, 190, 303, 117);
+        ctx.quadraticCurveTo(250, 180, 169, 97.45);
+        ctx.closePath();
+        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55  - opacitys)} )`;
+        ctx.fill()
+        ctx.globalAlpha = 1.0; // Reset opacity
+    }
+      
+      function heelCapOpacity(opacitys){
+        //   ctx.globalAlpha = opacitys
+          ctx.beginPath();
+          ctx.moveTo(205, 251);
+          ctx.lineTo(169, 233);
+          ctx.lineTo(145, 179);
+          ctx.lineTo(166, 91);
+          ctx.lineTo(169, 97);
+          ctx.quadraticCurveTo(169, 79, 194, 91);
+          ctx.lineTo(195, 87);
+          ctx.quadraticCurveTo(168, 77, 166, 93);
+          ctx.lineTo(162, 131);
+        ctx.bezierCurveTo(174, 130, 200, 195, 200, 250);
+        ctx.closePath();
+
+        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55 - opacitys)} )`; // Transparent effect
+        ctx.fill();
+        
+        ctx.globalAlpha = 1.0; // Reset opacity
+       
+    }
+}
+    
+  </script>
+ 
+</body>
+  
+  </html>
