@@ -286,6 +286,7 @@ image.onload = () => {
      drawImage(); // Initial draw
 };
 
+
 image.src = 'images/shoesnew.png';
 
 const robertoQuarter = document.getElementById('11')
@@ -293,8 +294,9 @@ const fabioQuarter = document.getElementById('12')
 const robertoHeel = document.getElementById('1')
 const fabioHeel = document.getElementById('2')
 
+
 robertoQuarter.onclick = () =>{ 
-    
+       
     if(image.src.includes('images/shoes101.png')){
       image.src='images/shoes1001.png'
     }
@@ -316,17 +318,16 @@ robertoQuarter.onclick = () =>{
     else{
         image.src = 'images/shoes11.png'
     }
-
+    
     fabioQuarter.style.outlineOffset='0px'
     fabioQuarter.style.outline = 'none'
     robertoQuarter.style.outline = '1px solid black'
-    robertoQuarter.style.outlineOffset = '5px'                       
+    robertoQuarter.style.outlineOffset = '5px'      
 }
 
 fabioQuarter.onclick = () =>{
-    
     if(image.src.includes('images/shoes101.png')){      //ok
-      image.src='images/shoes1202.png'
+        image.src='images/shoes1202.png'
     }else if(image.src.includes('images/shoes1002.png')){   //ok
         image.src = 'images/shoes102.png'
     }else if(image.src.includes('images/shoes1001.png')){
@@ -336,17 +337,18 @@ fabioQuarter.onclick = () =>{
     }else if(image.src.includes('images/shoes102.png')){
         return
     }else if(image.src.includes('images/shoes1202.png')){
-       return
+        return
     } 
     else{
         image.src = 'images/shoes12.png'
     }
-
+    
     robertoQuarter.style.outlineOffset='0px'
     robertoQuarter.style.outline = 'none'
     fabioQuarter.style.outline = '1px solid black'
     fabioQuarter.style.outlineOffset = '5px'
 }
+
 
 robertoHeel.onclick = () =>{
     if(image.src.includes('images/shoes12.png')){
@@ -375,6 +377,8 @@ robertoHeel.onclick = () =>{
     robertoHeel.style.outlineOffset='5px'
 }
 fabioHeel.onclick = () =>{
+    // console.log(imgObj)
+   
     if(image.src.includes('images/shoes12.png')){
        image.src ='images/shoes102.png'
     }else if(image.src.includes('images/shoes11.png')){
@@ -382,9 +386,12 @@ fabioHeel.onclick = () =>{
     }else if(image.src.includes('images/shoes1001.png')){
         image.src='images/shoes1101.png'
     }else if(image.src.includes('images/shoes102.png')){
-        return
+        return 
     }else if(image.src.includes('images/shoes1202.png')){
        image.src ='images/shoes102.png'
+    }
+    else if(image.src.includes('images/shoes1101.png')){
+       return
     }
     else{
         image.src = 'images/shoes1002.png'
@@ -393,6 +400,8 @@ fabioHeel.onclick = () =>{
     robertoHeel.style.outlineOffset='0px'
     fabioHeel.style.outline='1px solid black'
     fabioHeel.style.outlineOffset='5px'
+    // imgObj['url'] = image.src.split('http://127.0.0.1:5500/')[1]
+    // imgObj['material']['heelcap'] = 'fabio' 
 }
 
 
@@ -402,10 +411,7 @@ function getRectClient(e) {
     const y = e.clientY - clientRect.top;
     return { x, y };
 }
-//  canvas.onmousedown=(e)=>{
-//    const { x, y } = getRectClient(e);
-//        console.log(x,y)
-//    }
+//  
 
   canvas.onmousemove = (e) => {
     const { x, y } = getRectClient(e);
