@@ -1,5 +1,4 @@
 function heelCapOpacity(opacitys){
-    //   ctx.globalAlpha = opacitys
       ctx.beginPath();
       ctx.moveTo(205, 251);
       ctx.lineTo(169, 233);
@@ -13,9 +12,8 @@ function heelCapOpacity(opacitys){
     ctx.bezierCurveTo(174, 130, 200, 195, 200, 250);
     ctx.closePath();
 
-    ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55 - opacitys)} )`; // Transparent effect
+    ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55 - opacitys)} )`;
     ctx.fill();
     
-    ctx.globalAlpha = 1.0; // Reset opacity
-   
+    ctx.globalAlpha = 1.0;   
 }

@@ -5,7 +5,6 @@ function materialHandle(e){
     if (insideQuarter !== isHoverQuarter || insideHeel !== isHoverHeel) {
         isHoverQuarter = insideQuarter;
         isHoverHeel = insideHeel;
-        // Change click behavior based on which polygon is hovered
 
         if (insideHeel) {
             canvas.onclick = () => heelcapDisplay();
@@ -16,8 +15,7 @@ function materialHandle(e){
         }
       isHover = insideQuarter || insideHeel;
    
-      animateOpacity(insideQuarter ? 0.3 : 1.0, insideHeel ? 0.3 : 1.0); // Smoothly reduce opacity
-      
+      animateOpacity(insideQuarter ? 0.3 : 1.0, insideHeel ? 0.3 : 1.0); 
     canvas.style.cursor = isHover ? 'pointer' : 'default';
     
     

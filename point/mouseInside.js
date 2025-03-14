@@ -1,5 +1,4 @@
 function isMouseInside(x, y , polygontype='quarter') {
-    // Define the shoe cap shape as a polygon
     const polygon = [
         { x: 205, y: 251 },
         { x: 169, y: 233 },

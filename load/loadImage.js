@@ -4,7 +4,7 @@ let isHover = false;
 
 const image = new Image();
 image.onload = () => {
-     drawImage(); // Initial draw
+     drawImage();
 };
 
 

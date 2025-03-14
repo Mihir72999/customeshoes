@@ -1,6 +1,4 @@
 function quarterOpacity(opacitys){
-        
-    // ctx.globalAlpha = opacitys
     ctx.beginPath()
     ctx.moveTo(167 , 99.45)
     ctx.lineTo(165 , 129.45)
@@ -14,6 +12,6 @@ function quarterOpacity(opacitys){
     // ctx.strokeStyle = 'red'
     ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55  - opacitys)} )`;
     ctx.fill()
-    ctx.globalAlpha = 1.0; // Reset opacity
+    ctx.globalAlpha = 1.0; 
 }
   

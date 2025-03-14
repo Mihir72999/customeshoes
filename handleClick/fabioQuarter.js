@@ -1,7 +1,7 @@
 function fabioQuarterClick(){
-    if(image.src.includes('images/shoes101.png')){      //ok
+    if(image.src.includes('images/shoes101.png')){     
         image.src='images/shoes1202.png'
-    }else if(image.src.includes('images/shoes1002.png')){   //ok
+    }else if(image.src.includes('images/shoes1002.png')){  
         image.src = 'images/shoes102.png'
     }else if(image.src.includes('images/shoes1001.png')){
         image.src='images/shoes1202.png'

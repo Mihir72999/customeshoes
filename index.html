@@ -296,20 +296,17 @@ canvas.onmousemove = (e) => materialHandle(e)
 
 
 canvas.onmouseleave = (e) => {
-    animateOpacity(1.0 , 1.0); // Restore full opacity
+    animateOpacity(1.0 , 1.0);
     isHover = false;
 };
 
 
-// Draw the image and fade the shoe cap portion only
 function drawImage() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
 
-    // Draw full shoe image
     ctx.drawImage(image, -canvas.width * 0.162 , -canvas.height * 0.160, 
                   (canvas.width * 1.15) / 0.85, (canvas.height * 1.15) / 0.85);
                   if (opacityQuarter < 1 || opacityHeel < 1) {
-                      // Apply transparency only on shoe cap portion
                     //   ctx.globalAlpha = 1
                       quarterOpacity(opacityQuarter)
                       heelCapOpacity(opacityHeel)
