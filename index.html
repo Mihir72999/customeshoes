@@ -301,14 +301,6 @@ canvas.onmouseleave = (e) => {
 };
 
 
-
-canvas.onmousedown = (e) =>{
-    const {x,y} = getRectClient(e)
-    console.log(x,y)
-}
-
-
-
 // Draw the image and fade the shoe cap portion only
 function drawImage() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
