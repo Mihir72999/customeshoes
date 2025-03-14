@@ -267,332 +267,46 @@
    </div>
 </aside>
 </div>
-    
- 
+  <script src="load/loadImage.js"></script>
+  <script src="materialhandle/materialHandle.js"></script>
+  <script src="handleClick/robertoQuarter.js"></script>
+  <script src="handleClick/fabioQuarter.js"></script>
+  <script src="handleClick/robertoHeel.js"></script>
+  <script src="handleClick/fabioHeel.js"></script>
+  <script src="animate/animateOpacity.js"></script>
+  <script src="point/pointPolygon.js"></script>
+  <script src="point/mouseInside.js"></script>
+  <script src="display/heelcapDisplay.js"></script> 
+  <script src="display/quarterDisplay.js"></script> 
+  <script src="rect/getRectClient.js"></script> 
+  <script src="opacity/heelCapOpacity.js"></script> 
+  <script src="opacity/quarterOpacity.js"></script> 
   <script>
-let isHoverQuarter = false;
-let isHoverHeel = false;
-let opacityQuarter = 1.0;
-let opacityHeel = 1.0;
 
 const canvas = document.querySelector('#canvas');
 canvas.height = 400;
 canvas.width = 800;
 const ctx = canvas.getContext('2d');
-const image = new Image();
-let isHover = false;
 
-image.onload = () => {
-     drawImage(); // Initial draw
-};
+robertoQuarter.onclick = () =>robertoQuarterClick()
+fabioQuarter.onclick = () =>fabioQuarterClick()
+robertoHeel.onclick = () =>robertoHeelClick()
+fabioHeel.onclick = () =>fabioHeelClick()
+canvas.onmousemove = (e) => materialHandle(e)
 
-
-image.src = 'images/shoesnew.png';
-
-const robertoQuarter = document.getElementById('11')
-const fabioQuarter = document.getElementById('12')
-const robertoHeel = document.getElementById('1')
-const fabioHeel = document.getElementById('2')
-
-
-robertoQuarter.onclick = () =>{ 
-       
-    if(image.src.includes('images/shoes101.png')){
-      image.src='images/shoes1001.png'
-    }
-     else if(image.src.includes('images/shoes1002.png')){
-
-        image.src='images/shoes1101.png' 
-     }
-     
-    else if(image.src.includes('images/shoes1202.png')){
-        image.src='images/shoes1001.png'
-    }else if(image.src.includes('images/shoes1001.png')){
-        image.src='images/shoes1001.png'
-    }else if(image.src.includes('images/shoes1101.png')){
-        return
-    }else if(image.src.includes('images/shoes102.png')){
-        image.src='images/shoes1101.png'
-
-    }
-    else{
-        image.src = 'images/shoes11.png'
-    }
-    
-    fabioQuarter.style.outlineOffset='0px'
-    fabioQuarter.style.outline = 'none'
-    robertoQuarter.style.outline = '1px solid black'
-    robertoQuarter.style.outlineOffset = '5px'      
-}
-
-fabioQuarter.onclick = () =>{
-    if(image.src.includes('images/shoes101.png')){      //ok
-        image.src='images/shoes1202.png'
-    }else if(image.src.includes('images/shoes1002.png')){   //ok
-        image.src = 'images/shoes102.png'
-    }else if(image.src.includes('images/shoes1001.png')){
-        image.src='images/shoes1202.png'
-    }else if(image.src.includes('images/shoes1101.png')){
-        image.src = 'images/shoes102.png'
-    }else if(image.src.includes('images/shoes102.png')){
-        return
-    }else if(image.src.includes('images/shoes1202.png')){
-        return
-    } 
-    else{
-        image.src = 'images/shoes12.png'
-    }
-    
-    robertoQuarter.style.outlineOffset='0px'
-    robertoQuarter.style.outline = 'none'
-    fabioQuarter.style.outline = '1px solid black'
-    fabioQuarter.style.outlineOffset = '5px'
-}
-
-
-robertoHeel.onclick = () =>{
-    if(image.src.includes('images/shoes12.png')){
-          image.src='images/shoes1202.png'
-    }else if(image.src.includes('images/shoes11.png')){
-        image.src='images/shoes1001.png'
-    }else if(image.src.includes('images/shoes1101.png')){
-        image.src='images/shoes1001.png'
-       
-    }else if(image.src.includes('images/shoes102.png')){
-       image.src ='images/shoes1202.png'
-    }else if(image.src.includes('images/shoes1001.png')){
-        return
-    }else if(image.src.includes('images/shoes1.png')){
-        return
-     }else if(image.src.includes('images/shoes1202.png')){
-        return
-     }
-
-    else{
-        image.src='images/shoes101.png'
-    }
-    fabioHeel.style.outline='none'
-    fabioHeel.style.outlineOffset='0px'
-    robertoHeel.style.outline='1px solid black'
-    robertoHeel.style.outlineOffset='5px'
-}
-fabioHeel.onclick = () =>{
-    // console.log(imgObj)
-   
-    if(image.src.includes('images/shoes12.png')){
-       image.src ='images/shoes102.png'
-    }else if(image.src.includes('images/shoes11.png')){
-        image.src='images/shoes1202.png'
-    }else if(image.src.includes('images/shoes1001.png')){
-        image.src='images/shoes1101.png'
-    }else if(image.src.includes('images/shoes102.png')){
-        return 
-    }else if(image.src.includes('images/shoes1202.png')){
-       image.src ='images/shoes102.png'
-    }
-    else if(image.src.includes('images/shoes1101.png')){
-       return
-    }
-    else{
-        image.src = 'images/shoes1002.png'
-    }
-    robertoHeel.style.outline='none'
-    robertoHeel.style.outlineOffset='0px'
-    fabioHeel.style.outline='1px solid black'
-    fabioHeel.style.outlineOffset='5px'
-    // imgObj['url'] = image.src.split('http://127.0.0.1:5500/')[1]
-    // imgObj['material']['heelcap'] = 'fabio' 
-}
-
-
-function getRectClient(e) {
-    const clientRect = canvas.getBoundingClientRect();
-    const x = e.clientX - clientRect.left;
-    const y = e.clientY - clientRect.top;
-    return { x, y };
-}
-//  
-
-  canvas.onmousemove = (e) => {
-    const { x, y } = getRectClient(e);
-    const insideHeel = isMouseInside(x, y, "polygon");
-    const insideQuarter = isMouseInside(x, y, "quarter");  
-    if (insideQuarter !== isHoverQuarter || insideHeel !== isHoverHeel) {
-        isHoverQuarter = insideQuarter;
-        isHoverHeel = insideHeel;
-        // Change click behavior based on which polygon is hovered
-        if (insideHeel) {
-            canvas.onclick = () => heelcapDisplay();
-        } else if (insideQuarter) {
-            canvas.onclick = () => quarterDisplay();
-        } else {
-            canvas.onclick = () => console.log('none')
-        }
-      isHover = insideQuarter || insideHeel;
-      animateOpacity(insideQuarter ? 0.3 : 1.0, insideHeel ? 0.3 : 1.0); // Smoothly reduce opacity
-      
-    canvas.style.cursor = isHover ? 'pointer' : 'default';
-    
-    
-}
-isHover = false
-};
-const quarter = document.getElementById('quarter')
-const heelcap = document.getElementById('heelcap')
-function quarterDisplay(){
-    heelcap.style.transform = 'translateX(270px)'
-    quarter.style.transform = 'translateX(0px)'
-    quarter.style.transition='all';
-    quarter.style.transitionDuration = '0.5s'
-    quarter.style.transitionDelay='0.5s'
-}
-
-function heelcapDisplay(){
-    quarter.style.transform = 'translateX(270px)'
-
-    heelcap.style.transform = 'translateX(0px)'
-    heelcap.style.transition='all';
-    heelcap.style.transitionDuration = '0.5s'
-    heelcap.style.transitionDelay='0.5s'
-
-}
 
 canvas.onmouseleave = (e) => {
     animateOpacity(1.0 , 1.0); // Restore full opacity
     isHover = false;
 };
 
-function isMouseInside(x, y , polygontype='quarter') {
-    // Define the shoe cap shape as a polygon
-    const polygon = [
-        { x: 205, y: 251 },
-        { x: 169, y: 233 },
-        { x: 145, y: 179 },
-        { x: 166, y: 91 },
-        { x: 169, y: 97 },
-        { x: 194, y: 91 },
-        { x: 195, y: 87 },
-        { x: 166, y: 93 },
-        { x: 162, y: 131 },
-        { x: 200, y: 250 }
-    ];
-    const quaterPolygone = [
-        {x:167 ,y:99.45},
-        {x:165 ,y:129.45},
-        {x:204 ,y:251},
-        {x:212 ,y:254.45},
-        {x:230 ,y:180},
-        {x:354 ,y:212},
-        {x:303 ,y:117},
-        {x:250 , y:150},
-        {x:169 ,y:97.45},
-        
-      ]
-    
-    
-    return isPointInPolygon(x, y, polygontype === 'quarter' ? quaterPolygone : polygon);
+
+
+canvas.onmousedown = (e) =>{
+    const {x,y} = getRectClient(e)
+    console.log(x,y)
 }
 
-function heelCapOpacity(opacitys){
-        //   ctx.globalAlpha = opacitys
-          ctx.beginPath();
-          ctx.moveTo(205, 251);
-          ctx.lineTo(169, 233);
-          ctx.lineTo(145, 179);
-          ctx.lineTo(166, 91);
-          ctx.lineTo(169, 97);
-          ctx.quadraticCurveTo(169, 79, 194, 91);
-          ctx.lineTo(195, 87);
-          ctx.quadraticCurveTo(168, 77, 166, 93);
-          ctx.lineTo(162, 131);
-        ctx.bezierCurveTo(174, 130, 200, 195, 200, 250);
-        ctx.closePath();
-
-        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55 - opacitys)} )`; // Transparent effect
-        ctx.fill();
-        
-        ctx.globalAlpha = 1.0; // Reset opacity
-       
-    }
-
-
-function quarterOpacity(opacitys){
-        
-        // ctx.globalAlpha = opacitys
-        ctx.beginPath()
-        ctx.moveTo(167 , 99.45)
-        ctx.lineTo(165 , 129.45)
-        ctx.bezierCurveTo(175, 131, 201, 196, 204, 251);
-        ctx.lineTo(212 , 254.45)
-        ctx.bezierCurveTo(230, 175, 215.45, 180, 354, 212);
-        ctx.quadraticCurveTo(354, 190, 303, 117);
-        ctx.quadraticCurveTo(250, 180, 169, 97.45);
-        ctx.closePath();
-        // ctx.stroke()
-        // ctx.strokeStyle = 'red'
-        ctx.fillStyle = `rgba(255, 255, 255,  ${ (0.55  - opacitys)} )`;
-        ctx.fill()
-        ctx.globalAlpha = 1.0; // Reset opacity
-    }
-      
-     
-
-// Point-in-Polygon function (Ray-Casting Algorithm)
-function isPointInPolygon(x, y, polygon) {
-    let inside = false;
-    let j = polygon.length - 1;
-
-    for (let i = 0; i < polygon.length; i++) {
-        let xi = polygon[i].x, yi = polygon[i].y;
-        let xj = polygon[j].x, yj = polygon[j].y;
-
-        let intersect = ((yi > y) !== (yj > y)) &&
-                        (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-        if (intersect) inside = !inside;
-        j = i;
-    }
-    
-    return inside;
-}
-
-// Smooth opacity transition
-function animateOpacity(targetOpacityQuarter, targetOpacityHeel) {
-    const speed = 0.05; // Transition speed
-    function step() {
-
-        // Animate quarter opacity
-        if (Math.abs(opacityQuarter - targetOpacityQuarter) >= speed) {
-            opacityQuarter += opacityQuarter < targetOpacityQuarter ? speed : -speed;
-             requestAnimationFrame(step);
-             
-            } else {
-                opacityQuarter = targetOpacityQuarter;
-                drawImage();
-        }
-
-        // Animate heel opacity
-        if (Math.abs(opacityHeel - targetOpacityHeel) >= speed) {
-            opacityHeel += opacityHeel < targetOpacityHeel ? speed : -speed;
-            requestAnimationFrame(step);
-            
-        } else {
-            opacityHeel = targetOpacityHeel;
-            drawImage();
-            // changed = true;
-        }
-        
-
-        // Only continue animating if there were changes
-        
-        drawImage();
-    }
-    requestAnimationFrame(step);
-    if (opacityQuarter !== targetOpacityQuarter || opacityHeel !== targetOpacityHeel) {
-    }
-
-    
-        
-}
 
 
 // Draw the image and fade the shoe cap portion only
@@ -604,14 +318,11 @@ function drawImage() {
                   (canvas.width * 1.15) / 0.85, (canvas.height * 1.15) / 0.85);
                   if (opacityQuarter < 1 || opacityHeel < 1) {
                       // Apply transparency only on shoe cap portion
-                      ctx.globalAlpha = 1
+                    //   ctx.globalAlpha = 1
                       quarterOpacity(opacityQuarter)
-                      
-                     heelCapOpacity(opacityHeel)
+                      heelCapOpacity(opacityHeel)
                   }
-      
-    
-}
+                }
     
   </script>
  
