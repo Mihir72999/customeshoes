@@ -15,7 +15,8 @@ function materialHandle(e){
         }
       isHover = insideQuarter || insideHeel;
    
-      animateOpacity(insideQuarter ? 0.3 : 1.0, insideHeel ? 0.3 : 1.0); 
+     animateOpacity(insideQuarter ? 0.3 : 1.0 , insideHeel ? 0.3 : 1.0)  
+   
     canvas.style.cursor = isHover ? 'pointer' : 'default';
     
     

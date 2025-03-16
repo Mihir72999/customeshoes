@@ -302,12 +302,12 @@ canvas.onmouseleave = (e) => {
 
 
 function drawImage() {
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
-
     ctx.drawImage(image, -canvas.width * 0.162 , -canvas.height * 0.160, 
-                  (canvas.width * 1.15) / 0.85, (canvas.height * 1.15) / 0.85);
-                  if (opacityQuarter < 1 || opacityHeel < 1) {
-                    //   ctx.globalAlpha = 1
+    (canvas.width * 1.15) / 0.85, (canvas.height * 1.15) / 0.85);
+    if (opacityQuarter < 1 || opacityHeel < 1) {
+        //   ctx.globalAlpha = 1
                       quarterOpacity(opacityQuarter)
                       heelCapOpacity(opacityHeel)
                   }
